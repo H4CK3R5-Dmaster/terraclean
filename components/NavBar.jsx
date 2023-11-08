@@ -17,18 +17,8 @@ import {
     const { isOpen, onToggle } = useDisclosure();
     const [isScrolled, setIsScrolled] = useState(false);
     const [showDropdown, setShowDropdown] = useState(false);
-    const router = useRouter();
-    const { slug } = router.query;
-    const [lastCategorieSlug, setLastCategorieSlug] = useState("");
-  
-    // Effet pour mettre à jour le dernier slug de catégorie lorsque le chemin change
-    useEffect(() => {
-      if (router.query.slug && router.pathname.startsWith("/categorie/")) {
-        setLastCategorieSlug(router.query.slug);
-      }
-    }, [router.query.slug, router.pathname]);
-    const isUtilsDetailsPage = router.pathname.startsWith("/utilsdetails/");
-    const isCategorie = router.pathname.startsWith("/categorie/");
+    
+    
   
     const handleDropdownToggle = () => {
       setShowDropdown(!showDropdown);
@@ -53,7 +43,7 @@ import {
   
     return (
       <Box
-        bg={isScrolled ? "#fd0000" : "transparent"}
+        bg={"#042c44" }
         boxShadow={isScrolled ? "md" : "none"}
         py={4}
         px={8}
@@ -61,31 +51,20 @@ import {
         top={isScrolled ? 0 : 0}
         left={0}
         right={0}
-        zIndex={isScrolled ? "sticky" : "initial"}
+        zIndex={"initial"}
         transition="top 0.3s ease-in-out"
       >
         <Flex align="center">
-          <Box>
-            {isUtilsDetailsPage && (
-              <Box mx={4} my={2} fontSize={"xl"} color={"white"}>
-                <NextLink href={`/categorie/${lastCategorieSlug}`}>
-                  RETOUR
-                </NextLink>
-              </Box>
-            )}
-          </Box>
-          {isCategorie && (
-            <Box mx={4} my={2} fontSize={"xl"} color={"white"}>
-              <NextLink href={`/informations`}>RETOUR</NextLink>
-            </Box>
-          )}
+          
+          
   
           <Box fontWeight="bold" fontSize="lg">
             <NextLink href={"/"}>
               <Image
-                borderRadius="full"
-                boxSize="50px"
+                
                 src="/logo.png"
+                width={"90px"}
+                height={"60px"}
                 alt="logo"
               />
             </NextLink>
@@ -93,8 +72,8 @@ import {
           <Spacer />
           <Box display={{ base: "none", md: "block" }}>
             <Flex color="white">
-              <Box mx={4} _hover={{ color: "black" }}>
-                <NextLink href={"/"}>Accueil</NextLink>
+              <Box mx={4} _hover={{ color: "black" }} fontFamily={"rust"}>
+                <NextLink href={"/"} >ACCEUIL</NextLink>
               </Box>
               <Box mx={4} _hover={{ color: "black" }}>
                 <Box
@@ -110,7 +89,7 @@ import {
           <IconButton
             icon={<HamburgerIcon color={"white"} />}
             variant="ghost"
-            colorScheme="#fd0000"
+            colorScheme="#042c44"
             size="md"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             display={{ base: "block", md: "none" }}
@@ -118,7 +97,7 @@ import {
           />
         </Flex>
         <Collapse in={isOpen} animateOpacity>
-          <Box mt={4} bg={"#fd0000"}>
+          <Box mt={4} bg={"#042c44"}>
             <Flex direction="column" color="white">
               <Box mx={4} my={2}>
                 <NextLink href={"/"}>Accueil</NextLink>

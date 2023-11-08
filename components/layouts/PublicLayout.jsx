@@ -2,6 +2,7 @@ import { Box, ChakraProvider} from "@chakra-ui/react";
 import Head from "next/head";
 // import { ReactNode } from "react";
 import Navbar from "../NavBar";
+import theme from "@/utils/chakra-theme";
 
 
 export default function PublicLayout({ children }) {
@@ -14,7 +15,7 @@ export default function PublicLayout({ children }) {
         <meta property="og:image" content="/logo.png" />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <ChakraProvider >
+      <ChakraProvider theme={theme}>
         <Navbar/>
         <main>{children}</main>
       </ChakraProvider>
