@@ -23,7 +23,7 @@ export default function MakeDevis() {
       >
         Faire un devis
       </Heading>
-      <Text color={"white"} px={40} mb={20}>
+      <Text color={"white"} px={[10,40]} mb={20}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est laboriosam
         harum fuga, nulla hic sit aperiam perspiciatis iste facilis, repellendus
         eaque officia velit deserunt animi! Soluta aliquam vero corrupti neque.

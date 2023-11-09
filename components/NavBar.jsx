@@ -73,15 +73,30 @@ import {
           <Box display={{ base: "none", md: "block" }}>
             <Flex color="white">
               <Box mx={4} _hover={{ color: "#45c4b0" }} fontFamily={"rust"}>
-                <NextLink href={"/"} >ACCEUIL</NextLink>
+                <NextLink href={"/"} >Acceuil</NextLink>
               </Box>
               <Box mx={4} _hover={{ color: "#45c4b0" }}>
                 <Box
-                  onMouseEnter={handleDropdownToggle}
-                  onMouseLeave={handleDropdownClose}
+                  
                   position="relative"
                 >
-                  <NextLink href={"/informations"}>INFORMATIONS</NextLink>
+                  <NextLink href={"/"}>Services</NextLink>
+                </Box>
+              </Box>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
+                <Box
+                  
+                  position="relative"
+                >
+                  <NextLink href={"/"}>Demande de devis</NextLink>
+                </Box>
+              </Box>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
+                <Box
+                  
+                  position="relative"
+                >
+                  <NextLink href={"/"}>Contact</NextLink>
                 </Box>
               </Box>
             </Flex>
@@ -99,12 +114,32 @@ import {
         <Collapse in={isOpen} animateOpacity>
           <Box mt={4} bg={"#042c44"}>
             <Flex direction="column" color="white">
-              <Box mx={4} my={2}>
-                <NextLink href={"/"}>Accueil</NextLink>
+            <Box mx={4} _hover={{ color: "#45c4b0" }} fontFamily={"rust"}>
+                <NextLink href={"/"} >Acceuil</NextLink>
               </Box>
-  
-              <Box mx={4} my={2}>
-                <NextLink href={"/informations"}>INFORMATIONS</NextLink>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
+                <Box
+                  
+                  position="relative"
+                >
+                  <NextLink href={"/"}>Services</NextLink>
+                </Box>
+              </Box>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
+                <Box
+                  
+                  position="relative"
+                >
+                  <NextLink href={"/"}>Demande de devis</NextLink>
+                </Box>
+              </Box>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
+                <Box
+                  
+                  position="relative"
+                >
+                  <NextLink href={"/"}>Contact</NextLink>
+                </Box>
               </Box>
             </Flex>
           </Box>
