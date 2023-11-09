@@ -29,7 +29,7 @@ export default function BackgroundServ() {
       >
         <Box textAlign="left" bottom={0}>
           <Text color="#fff" fontSize={[20, 40]} mt={4} mx={10}>
-            Donnez de l'eclat a chaque instant avec notre expertise qui fait
+            Donnez de l $apos; eclat a chaque instant avec notre expertise qui fait
             briller
           </Text>
         </Box>
