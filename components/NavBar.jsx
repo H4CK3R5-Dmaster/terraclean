@@ -72,10 +72,10 @@ import {
           <Spacer />
           <Box display={{ base: "none", md: "block" }}>
             <Flex color="white">
-              <Box mx={4} _hover={{ color: "black" }} fontFamily={"rust"}>
+              <Box mx={4} _hover={{ color: "#45c4b0" }} fontFamily={"rust"}>
                 <NextLink href={"/"} >ACCEUIL</NextLink>
               </Box>
-              <Box mx={4} _hover={{ color: "black" }}>
+              <Box mx={4} _hover={{ color: "#45c4b0" }}>
                 <Box
                   onMouseEnter={handleDropdownToggle}
                   onMouseLeave={handleDropdownClose}
