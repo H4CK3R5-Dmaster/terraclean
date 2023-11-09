@@ -51,7 +51,7 @@ import {
         top={isScrolled ? 0 : 0}
         left={0}
         right={0}
-        zIndex={"initial"}
+        zIndex={"1"}
         transition="top 0.3s ease-in-out"
       >
         <Flex align="center">
