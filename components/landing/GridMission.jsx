@@ -9,7 +9,7 @@ import {
   } from "@chakra-ui/react";
   import NextLink from "next/link";
   
-  export default function GridMission({ data }) {
+  export default function GridMission({ data, title, description }) {
     return (
       <Box pt={20}  id="premier-titre" bg={"#042c44"}>
         <Heading
@@ -20,12 +20,10 @@ import {
           color={"white"}
           pt={"20"}
         >
-          Notre Mission
+          {title}
         </Heading>
         <Text color={"white"} px={[10,40]} mb={20}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est laboriosam
-          harum fuga, nulla hic sit aperiam perspiciatis iste facilis, repellendus
-          eaque officia velit deserunt animi! Soluta aliquam vero corrupti neque.
+          {description}
         </Text>
   
         <Grid
@@ -36,6 +34,11 @@ import {
         >
           {data.map((item, index) => (
             <Box key={index} color={"white"} p={8} mb={20}>
+                {item?.image ? (
+                    <Center>
+                        <Image src={item.image}/>
+                    </Center>
+                ):("")}
               <Center>
                 <Heading as="h1" size="md" mt={8} fontSize={24}>
                   {item.title}

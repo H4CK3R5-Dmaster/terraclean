@@ -80,7 +80,7 @@ import {
                   
                   position="relative"
                 >
-                  <NextLink href={"/"}>Services</NextLink>
+                  <NextLink href={"/services"}>Services</NextLink>
                 </Box>
               </Box>
               <Box mx={4} _hover={{ color: "#45c4b0" }}>
@@ -122,7 +122,7 @@ import {
                   
                   position="relative"
                 >
-                  <NextLink href={"/"}>Services</NextLink>
+                  <NextLink href={"/services"}>Services</NextLink>
                 </Box>
               </Box>
               <Box mx={4} _hover={{ color: "#45c4b0" }}>

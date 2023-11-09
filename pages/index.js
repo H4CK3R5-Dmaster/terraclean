@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <ContainerBlock>
       <Backgroundbanniere/>
-      <GridMission data={datasgridmission}/>
+      <GridMission data={datasgridmission} title={"Notre Mission"} description={"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est laboriosam harum fuga, nulla hic sit aperiam perspiciatis iste facilis, repellendus eaque officia velit deserunt animi! Soluta aliquam vero corrupti neque."}/>
       <MakeDevis/>
       <Contactmod/>
       <Footer/>
