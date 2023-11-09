@@ -7,6 +7,7 @@ import Backgroundbanniere from '@/components/landing/Background'
 import GridMission from '@/components/landing/GridMission'
 import Footer from '@/components/Footer'
 import MakeDevis from '@/components/landing/MakeDevis'
+import Contactmod from '@/components/landing/Contactmod'
 
 const inter = Inter({ subsets: ['latin'] })
 const datasgridmission = [
@@ -21,6 +22,7 @@ export default function Home() {
       <Backgroundbanniere/>
       <GridMission data={datasgridmission}/>
       <MakeDevis/>
+      <Contactmod/>
       <Footer/>
     </ContainerBlock>
   )

@@ -5,17 +5,16 @@ import NextLink from "next/link";
 const Footer = () => {
   return (
     <Flex
-      bg="#fd0000"
+      bg="#042c44"
       py={4}
       color="white"
-      mt={40}
+      borderTop="1px solid black" 
       align="center"
       justify="center"
       direction="column"
     >
-      
       <Text textAlign="center" mt={2} fontSize={"medium"}>
-        YNOVPHANTOMX TEAM
+        © 2023 TerraClean - Nettoyage de Terrasse. Tous droits réservés.
       </Text>
     </Flex>
   );
