@@ -18,7 +18,7 @@ import {
           textAlign="center"
           mb={4}
           color={"white"}
-          pt={"20"}
+          pt={"10"}
         >
           {title}
         </Heading>
