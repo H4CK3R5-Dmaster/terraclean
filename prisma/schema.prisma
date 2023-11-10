@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model devis {
+  id                 Int     @id @default(autoincrement())
+  devis_id           String  @db.Text
+  terrace_mat        String? @db.Text
+  terrace_surface    Int?
+  mur_mat            String? @db.Text
+  mur_surface        Int?
+  toit_mat           String? @db.Text
+  toit_surface       Int?
+  toit_traitement    String? @db.Text
+  mur_traitement     String? @db.Text
+  terrace_traitement String? @db.Text
+  nom                String  @db.Text
+  telephone          String  @db.Text
+  codepostale        String  @db.Text
+  email              String  @db.Text
+}
+
+model user {
+  id             Int     @id @default(autoincrement())
+  user_id        String  @db.Text
+  username       String  @db.Text
+  r_le           String  @map("rôle") @db.Text
+  password       String  @db.Text
+  token          String  @db.Text
+  remember_token String? @db.Text
+  email          String  @db.Text
+}
