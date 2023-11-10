@@ -3,11 +3,14 @@ import Head from "next/head";
 // import { ReactNode } from "react";
 import Navbar from "../NavBar";
 import theme from "@/utils/chakra-theme";
+import { useRouter } from "next/router";
 
 
 export default function PublicLayout({ children }) {
+
+  const router = useRouter()
   return (
-    <Box minH={"100vh"} bg={"#1A171E"}>
+    <Box minH={"100vh"} bg={"#042c44"}>
       <Head>
         <title>Terraclean</title>
         <meta name="description" content="YnovPhantomX database utils ! Explore many utils for pentest or hacking !" />
