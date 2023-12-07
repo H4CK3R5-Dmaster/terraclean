@@ -8,6 +8,7 @@ import {
   FormControl,
   FormLabel,
   Heading,
+  Grid,
   Flex,
   IconButton,
   Image,
@@ -47,123 +48,121 @@ export const ColumnWithImage = () => {
       <Box
         w={"95%"}
         borderRadius="2xl"
-        px={10}
         bg="#45c4b0"
         maxHeight={"90vh"}
         h={"70vh"}
         display="flex"
       >
-        <Box pr={8} py={10}>
-          <img src="/conn.svg" alt="Image" width={"50%"} />
-        </Box>
+        <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+          <Box p={10} display={["none", "flex"]} pl={20}>
+            <Image src="/conn.svg" alt="Image" boxSize={"90%"} />
+          </Box>
 
-        <Box pl={8}>
-          <form
-            onSubmit={(e) => handleSubmit(e)}
-            onChange={() => {
-              setFormError(false);
-            }}
-          >
-            <FormControl mb={[4, 6]}>
-              <FormLabel
-                htmlFor="username"
-                fontSize={["10px", "12px"]}
-                fontWeight={500}
-              >
-                Identifiant
-              </FormLabel>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                  <Image
-                    src={"/icons/user.svg"}
-                    alt="User Icon"
-                    boxSize={9}
-                    pt={2}
+          <Box mt={10} width={"60%"} mx={['24', '24']}>
+            <Heading my={10} color={"white"}>
+              Connexion 👋
+            </Heading>
+            <form onSubmit={(e) => handleSubmit(e)}>
+              <FormControl mb={[4, 6]} w={"100%"}>
+                <FormLabel
+                  htmlFor="username"
+                  fontSize={["10px", "12px"]}
+                  fontWeight={500}
+                  color={"white"}
+                >
+                  Identifiant
+                </FormLabel>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <Image
+                      src={"/icons/user.svg"}
+                      alt="User Icon"
+                      boxSize={9}
+                    />
+                  </InputLeftElement>
+                  <Input
+                    type="text"
+                    id="username"
+                    autoFocus
+                    placeholder="Identifiant"
+                    fontSize={"12px"}
+                    bg={"gray.200"}
+                    value={username}
+                    onChange={handleUsernameChange}
+                    required
                   />
-                </InputLeftElement>
-                <Input
-                  type="text"
-                  id="username"
-                  autoFocus
-                  placeholder="Saisissez votre adresse email"
-                  fontSize={"12px"}
-                  bg={"secondary.500"}
-                  value={username}
-                  onChange={handleUsernameChange}
-                  required
-                />
-              </InputGroup>
-            </FormControl>
-            <FormControl mb={[4, 6]}>
-              <FormLabel
-                htmlFor="password"
-                fontSize={["10px", "12px"]}
-                fontWeight={500}
-              >
-                Mot de passe
-              </FormLabel>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                  <Image
-                    src={"/icons/lock.svg"}
-                    alt="Lock Icon"
-                    boxSize={9}
-                    pt={2}
+                </InputGroup>
+              </FormControl>
+              <FormControl mb={[4, 6]}>
+                <FormLabel
+                  htmlFor="password"
+                  fontSize={["10px", "12px"]}
+                  fontWeight={500}
+                  color={"white"}
+                >
+                  Mot de passe
+                </FormLabel>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <Image
+                      src={"/icons/lock.svg"}
+                      alt="Lock Icon"
+                      boxSize={9}
+                    />
+                  </InputLeftElement>
+                  <Input
+                    type={isOpen ? "text" : "password"}
+                    id="password"
+                    placeholder="Saisissez votre mot de passe"
+                    fontSize={"12px"}
+                    bg={"gray.200"}
+                    value={password}
+                    onChange={handlePasswordChange}
+                    required
                   />
-                </InputLeftElement>
-                <Input
-                  type={isOpen ? "text" : "password"}
-                  id="password"
-                  placeholder="Saisissez votre mot de passe"
-                  fontSize={"12px"}
-                  bg={"secondary.500"}
-                  value={password}
-                  onChange={handlePasswordChange}
-                  required
-                />
-                <InputRightElement>
-                  <IconButton
-                    aria-label={
-                      isOpen
-                        ? "Masquer le mot de passe"
-                        : "Afficher le mot de passe"
-                    }
-                    icon={
-                      <Image
-                        src={isOpen ? "/icons/eye.svg" : "/icons/eye.svg"}
-                        alt="Show/Hide Password Icon"
-                        boxSize={9}
-                        pt={2}
-                      />
-                    }
-                    variant="ghost"
-                    colorScheme="gray"
-                    _hover={{}}
-                    onClick={onToggle}
-                  />
-                </InputRightElement>
-              </InputGroup>
-            </FormControl>
+                  <InputRightElement>
+                    <IconButton
+                      aria-label={
+                        isOpen
+                          ? "Masquer le mot de passe"
+                          : "Afficher le mot de passe"
+                      }
+                      icon={
+                        <Image
+                          src={isOpen ? "/icons/eye.png" : "/icons/eye.png"}
+                          alt="Show/Hide Password Icon"
+                          boxSize={6}
+                        />
+                      }
+                      variant="ghost"
+                      colorScheme="gray"
+                      _hover={{}}
+                      onClick={onToggle}
+                    />
+                  </InputRightElement>
+                </InputGroup>
+              </FormControl>
 
-            <Button
-              type="submit"
-              isDisabled={isLoading}
-              bg="primary.500"
-              _hover={{}}
-              loadingText="Connexion en cours..."
-              color={"white"}
-              w={"full"}
-              fontSize={["14px", "16px", "18px"]}
-              fontWeight={600}
-            >
-              {isLoading ? (
-                <Spinner color="primary.500" />
-              ) : (
-                <>Je me connecte -&gt;</>
-              )}
-            </Button>
-          </form>
-        </Box>
+              <Button
+                type="submit"
+                isDisabled={isLoading}
+                bg="#042c44"
+                _hover={{}}
+                loadingText="Connexion en cours..."
+                color={"white"}
+                w={"full"}
+                fontSize={["14px", "16px", "18px"]}
+                fontWeight={600}
+              >
+                {isLoading ? (
+                  <Spinner color="primary.500" />
+                ) : (
+                  <>Je me connecte </>
+                )}
+              </Button>
+            </form>
+          </Box>
+        </Grid>
       </Box>
     </Flex>
   );

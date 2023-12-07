@@ -29,9 +29,16 @@ model user {
   id             Int     @id @default(autoincrement())
   user_id        String  @db.Text
   username       String  @db.Text
-  r_le           String  @map("rôle") @db.Text
+  role           String  @db.Text
   password       String  @db.Text
   token          String  @db.Text
   remember_token String? @db.Text
   email          String  @db.Text
+}
+
+model qr_code {
+  id         Int    @id @default(autoincrement())
+  qr_code_id String @db.VarChar(255)
+  code       String @db.Text
+  scanned    Int
 }
