@@ -5,7 +5,7 @@ import { Box, Center, Image, Text } from "@chakra-ui/react";
 import { Prisma, PrismaClient } from "@prisma/client";
 import axios from "axios";
 
-export default function index_redirect({ isCodeValid }) {
+export default function Index_Redirect({ isCodeValid }) {
     const router = useRouter();
     const { id } = router.query;
     const prisma = new PrismaClient()
