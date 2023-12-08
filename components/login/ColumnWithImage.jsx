@@ -28,6 +28,8 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/router";
 
 export const ColumnWithImage = () => {
   const [username, setUsername] = useState("");
@@ -42,6 +44,35 @@ export const ColumnWithImage = () => {
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const router = useRouter();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await axios.post("/api/logon", {
+        username,
+        password,
+      });
+      console.log(response)
+      
+      if (response.status === 200) {
+        localStorage.setItem("isLogged", true)
+        localStorage.setItem("user_id", response.data.iduser)
+        localStorage.setItem("userinfo", response.data.infosup)
+        router.push("/dashboard")
+      } else {
+        
+        console.error("Login failed with status:", response.status);
+      }
+    } catch (error) {
+      
+      console.error("Error during login:", error);
+    }
+
+    setIsLoading(false);
   };
   return (
     <Flex align="center" justify="center" h="90vh" pt={20}>
@@ -58,7 +89,7 @@ export const ColumnWithImage = () => {
             <Image src="/conn.svg" alt="Image" boxSize={"90%"} />
           </Box>
 
-          <Box mt={10} width={"60%"} mx={['24', '24']}>
+          <Box mt={10} width={"60%"} mx={["24", "24"]}>
             <Heading my={10} color={"white"}>
               Connexion 👋
             </Heading>

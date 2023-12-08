@@ -11,6 +11,9 @@ export default async function handler(req, res) {
                 code: slug
             }
         })
+        if(qr.length == 0) {
+            res.status(404).json({ isValid: false });
+        }
         if (qr.length > 0) {
             const qrCode = qr[0];
             const qrCodes = await prisma.qr_code.findUnique({
@@ -37,7 +40,7 @@ export default async function handler(req, res) {
             res.status(404).json({ isValid: false });
         }
     } catch (error) {
-        console.error('Error validating code:', error);
+        
         res.status(500).json({ error: 'Internal server error' });
     } finally {
         await prisma.$disconnect();
